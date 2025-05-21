@@ -18,7 +18,7 @@ desired_gap_size_mm = 5
 blocksx = A4_shape[0]//desired_block_size_mm
 blocksy = A4_shape[1]//desired_block_size_mm
  
-aurcoDict = aruco.getPredefinedDictionary(aruco.DICT_4X4_250)
+arucoDict = aruco.getPredefinedDictionary(aruco.DICT_4X4_250)
 charucoBoard = aruco.CharucoBoard((blocksx,
                                          blocksy),
                                          desired_block_size_mm,
