@@ -29,8 +29,8 @@ charucoBoard = aruco.CharucoBoard((blocksx,
 blocksx2 = (A4_shape[0]+desired_gap_size_mm)//(desired_block_size_mm+desired_gap_size_mm)
 blocksy2 = (A4_shape[1]+desired_gap_size_mm)//(desired_block_size_mm+desired_gap_size_mm)
  
-arucoBoard = aruco.GridBoard((blocksx2,
-                                    blocksy2),
+arucoBoard = aruco.GridBoard(
+                              (blocksx2, blocksy2),
                                     desired_block_size_mm,
                                     desired_gap_size_mm,
                                     aurcoDict)
