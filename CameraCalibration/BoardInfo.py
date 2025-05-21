@@ -7,9 +7,9 @@ from cv2 import aruco
 #8.5_shape_1cm_margin = 2350, 3100
 #outshape = 2380*4, 3308*4
 
-dpmm = 40
-A4_shape = 216, 279
-A4_shape_margin = A4_shape[0]-10, A4_shape[1] - 20
+dpmm = 40 # Dots per millimeter used for scaling
+A4_shape = 216, 279 # A4 paper size in mm
+A4_shape_margin = A4_shape[0]-10, A4_shape[1] - 20 
 outshape = A4_shape[0]*dpmm, A4_shape[1]*dpmm
 desired_block_size_mm = 30
 desired_aruco_size_mm = 21
@@ -19,8 +19,8 @@ blocksx = A4_shape[0]//desired_block_size_mm
 blocksy = A4_shape[1]//desired_block_size_mm
  
 arucoDict = aruco.getPredefinedDictionary(aruco.DICT_4X4_250)
-charucoBoard = aruco.CharucoBoard((blocksx,
-                                         blocksy),
+charucoBoard = aruco.CharucoBoard(
+                                         (blocksx, blocksy), # Number of markers in X,Y coordinate system
                                          desired_block_size_mm,
                                          desired_aurco_size_mm,
                                          aurcoDict)
@@ -30,7 +30,7 @@ blocksx2 = (A4_shape[0]+desired_gap_size_mm)//(desired_block_size_mm+desired_gap
 blocksy2 = (A4_shape[1]+desired_gap_size_mm)//(desired_block_size_mm+desired_gap_size_mm)
  
 arucoBoard = aruco.GridBoard(
-                              (blocksx2, blocksy2),
-                                    desired_block_size_mm,
-                                    desired_gap_size_mm,
-                                    aurcoDict)
+                              (blocksx2, blocksy2), # Number of markers in (X, Y)
+                              desired_block_size_mm, 
+                              desired_gap_size_mm,
+                              aurcoDict)
